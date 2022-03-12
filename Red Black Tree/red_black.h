@@ -315,6 +315,16 @@ class Red_Black_Tree {
             return findHelper(_root, value) != nullptr;
         }
 
+        /* Prints a tree level-by-level in the format:
+        
+               3                  
+              / \                 3[color]
+             2   5         =>     2[color] 5[color] 
+            /   / \               1[color] X 4[color] 6[color]
+           1   4   6 
+
+           null children are repesented by X's in non-empty levels
+        */
         void print_level_by_level(std::ostream& out) {
             if (_root == nullptr) {
                 return;
@@ -375,7 +385,5 @@ std::ostream& operator<<(std::ostream& out, Red_Black_Tree<T>& rbt) {
 
     return out;
 } 
-
-// Testing new remote branch
 
 #endif
