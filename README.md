@@ -31,29 +31,24 @@ This is a templated Red Black Tree I have written in C++. I wanted to try creati
         | `void rebalance()`                        | Function for rebalancing a tree. Color root black if not already |
      
      #### public:
-        1. `bool empty()`
-           - True if list is empty
-        2. `void clear()`
-           - Makes a tree empty
-        3. Constructors:
-           - `Red_Black_Tree()`
-           - `Red_Black_Tree(T value)`
-           - `Red_Black_Tree(Red_Black_Tree& other)`
-        4. Destructor
-           - `~Red_Black_Tree()`
-        5. Assignment Operators:
-           - `Red_Black_Tree& operator=(Red_Black_Tree& other)`
-        6. `void insert(T& value)`
-           - Insert value into tree and rebalance
-        7. `void print_level_by_level(std::ostream& out)`
-           - Prints a tree level by level using a BFS algorithm
+        | Function                                           | Description                                             |
+        |----------------------------------------------------|---------------------------------------------------------|
+        | `bool empty()`                                     | True if list is empty                                   |
+        | `void clear()`                                     | Makes a tree empty                                      |
+        | `Red_Black_Tree()`                                 | Default constructor                                     |
+        | `Red_Black_Tree(T value)`                          | Constructs a new tree with `value` as the root          |
+        | `Red_Black_Tree(Red_Black_Tree& other)`            | Copy Constructor                                        |
+        | `~Red_Black_Tree()`                                | Destructor                                              |
+        | `Red_Black_Tree& operator=(Red_Black_Tree& other)` | Copy Assignment                                         |
+        | `void insert(T& value)`                            | Insert value into tree and rebalance                    |
+        | `void print_level_by_level(std::ostream& out)`     | Prints a tree level-by-level using a BFS algorithm      |
    
    5. `std::ostream& operator<<(std::ostream& out, Red_Black_Tree<T>& rbt)`
       - Print function for tree (Uses `print_level_by_level`)
   
 ## I plan to add:
   1. A search function
-  2. Move Constructor and move assignment
+  2. Move constructor and move assignment operator
   3. A remove function
   4. Preorder, inorder, and postorder prints
   5. Input operator to create tree from a file
