@@ -212,6 +212,21 @@ class Red_Black_Tree {
             }
         }
 
+        // Recursive helper function for finding a value
+        Node* findHelper(Node* node, const T& value) {
+            if (node == nullptr) {
+                return nullptr;
+            }
+
+            if (node->value == value) { // If at correct node, return it
+                return node;
+            } else if (node->value > value) { // If current node is greater, go left
+                return findHelper(node->left_child);
+            } else { // Otherwise, go right
+                return findHelper(node->right_child);
+            }
+        }
+
     public:
         // Checks if tree is empty
         bool empty() {
@@ -221,6 +236,7 @@ class Red_Black_Tree {
         // Makes tree empty
         void clear() {
             deleteHelper(_root);
+            _root = nullptr;
             _size = 0;
         }
 
@@ -233,6 +249,12 @@ class Red_Black_Tree {
         // Copy Constructor
         Red_Black_Tree(Red_Black_Tree& other): _root{nullptr}, _size(other._size) {
             _root = copyHelper(other._root);
+        }
+
+        // Move Constructor
+        Red_Black_Tree(Red_Black_Tree&& other): _root(other._root), _size(other._size) {
+            other._root = nullptr;
+            other._size = 0;
         }
 
         // Destructor
@@ -252,6 +274,26 @@ class Red_Black_Tree {
 
             _root = copyHelper(other._root);
             _size = other._size;
+
+            return *this;
+        }
+
+        // Move Assignment
+        Red_Black_Tree& operator=(Red_Black_Tree&& other) {
+            if (this == &other) {
+                return *this;
+            }
+
+            if (!empty()) {
+                clear();
+            }
+
+            _root = other._root;
+            _size = other._size;
+            other._root = nullptr;
+            other._size = 0;
+
+            return *this;
         }
 
         // Insert value into tree
@@ -266,6 +308,11 @@ class Red_Black_Tree {
             }
 
             _size++;
+        }
+
+        // Returns true if value is in tree
+        bool is_in_tree(const T& value) {
+            return findHelper(_root, value) != nullptr;
         }
 
         void print_level_by_level(std::ostream& out) {
