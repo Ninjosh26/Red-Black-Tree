@@ -1,5 +1,5 @@
 # Red-Black-Tree
-This is a templated Red Black Tree I have written in C++. I wanted to try creating a red-black, self-balancing binary search tree on my own. This repository will detail my progress. The red_black_original.h contains the original functionality without key-value pairs. The current red_balck.h has key-value functionality.
+This is a templated Red Black Tree I have written in C++. I wanted to try creating a red-black, self-balancing binary search tree on my own. This repository will detail my progress. The red_black_original.h contains the original functionality without key-value pairs. The current red_black.h has key-value functionality.
 
 ## The functionality I have written so far:
   1. Template: `Red_Black_Tree<K, V, Comparator>`
