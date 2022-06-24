@@ -40,9 +40,9 @@ This is a templated Red Black Tree I have written in C++. I wanted to try creati
         | `void preorder(std::ostream& out, RB_Node* n)`                            | Recursive helper for preorder traversal                              |
         | `void inorder(std::ostream& out, RB_Node* n)`                             | Recursive helper for inorder traversal                               |
         | `void postorder(std::ostream& out, RB_Node* n)`                           | Recursive helper for postorder traversal                             |
-        | `RB_Node* rightRotation(RB_Node* root)`                                   | Perform a right rotation around `Node* root`                         |
-        | `RB_Node* leftRotation(RB_Node* root)`                                    | Perform a left rotation around `Node* root`                          |
-        | `void recolor(RB_Node* root)`                                             | Recolor `Node* root` and its children                                |
+        | `RB_Node* rightRotation(RB_Node* root)`                                   | Perform a right rotation around `RB_Node* root`                      |
+        | `RB_Node* leftRotation(RB_Node* root)`                                    | Perform a left rotation around `RB_Node* root`                       |
+        | `void recolor(RB_Node* root)`                                             | Recolor `RB_Node* root` and its children                             |
         | `RB_Node* rebalanceHelper(RB_Node* node)`                                 | Recursive helper function for rebalancing a tree                     |
         | `void rebalance()`                                                        | Function for rebalancing a tree. Color root black if not already     |
      
@@ -52,7 +52,7 @@ This is a templated Red Black Tree I have written in C++. I wanted to try creati
         | `bool empty()`                                      | True if list is empty                                        |
         | `void clear()`                                      | Makes a tree empty                                           |
         | `Red_Black_Tree()`                                  | Default Constructor                                          |
-        | `Red_Black_Tree(T value)`                           | Constructs a new tree with `value` as the root               |
+        | `Red_Black_Tree(pair value)`                        | Constructs a new tree with `value` as the root               |
         | `Red_Black_Tree(Red_Black_Tree& other)`             | Copy Constructor                                             |
         | `Red_Black_Tree(Red_Black_Tree&& other)`            | Move Constructor                                             |
         | `~Red_Black_Tree()`                                 | Destructor                                                   |
