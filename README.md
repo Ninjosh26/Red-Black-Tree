@@ -45,7 +45,6 @@ This is a templated Red Black Tree I have written in C++. I wanted to try creati
         | `void recolor(RB_Node* root)`                                             | Recolor `Node* root` and its children                                |
         | `RB_Node* rebalanceHelper(RB_Node* node)`                                 | Recursive helper function for rebalancing a tree                     |
         | `void rebalance()`                                                        | Function for rebalancing a tree. Color root black if not already     |
-        | `RB_Node* findHelper(RB_Node* node, const T& value)`                      | Recursive helper function for finding a value in a tree              | 
      
      #### public:
         | Function                                            | Description                                                  |
